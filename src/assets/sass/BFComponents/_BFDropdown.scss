@@ -1,0 +1,201 @@
+.btn {
+    &--dropdown {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        min-width: auto;
+
+
+
+        @media only screen and (max-width: $screen-md-min - 1) {
+            &.md {
+                &--not {
+                    display: none;
+                }
+                &--hide-arrow {
+                    .icon {
+                        &--arrow-small {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        span {
+            + i {
+                margin-left: 8px;
+            }
+        }
+        .icon--arrow-small {
+            font-size: 12px;
+            color: $color-vivid-orange-1000;
+            transform: rotate(90deg);
+            transition: all 300ms ease;
+        }
+        &.active {
+            .icon--arrow-small {
+                transform: rotate(-90deg);
+                transition: all 300ms ease;
+            }
+        }
+    }
+}
+
+.#{$prefix} {
+    &-dropdown-target {
+        overflow: hidden;
+        position: absolute;
+        z-index: 5;
+        min-width: max-content;
+        top: 100%;
+        border-radius: 4px;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.06);
+        max-height: 0;
+        opacity: 0;
+        transition: all 300ms ease;
+
+        @media only screen and (max-width: $screen-md-min - 1) {
+            width: 100%;
+            box-shadow: none;
+            position: relative;
+        }
+
+        &.mobile-visible {
+            @media only screen and (max-width: $screen-md-min - 1) {
+                width: 100%;
+                box-shadow: none;
+                max-height: 10000px;
+                opacity: 1;
+            }
+        }
+
+        &--mobile-modal {
+            @media only screen and (max-width: $screen-md-min - 1) {
+                overflow: hidden;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 10;
+                height: 0;
+                > div {
+                    height: 100%;
+                }
+
+                &.active {
+                    height: 100%;
+                    transition: all 400ms ease !important;
+                }
+
+                .#{$prefix} {
+                    &-circle {
+                        width: 45px;
+                        height: 45px;
+                        margin-right: 4px;
+                    }
+                }
+
+                ul {
+                    width: 100%;
+                    padding-top: 20px;
+                    li {
+                        + li {
+                            margin-top: 0;
+                        }
+                    }
+                    a {
+                        width: 100%;
+                    }
+                }
+
+                .#{$prefix}-dropdown-target {
+                    &--core {
+                        background-color: $color-white;
+                    }
+                }
+            }
+        }
+
+        &--head {
+            padding: 24px 0;
+            border-bottom: solid 1px $color-background-grey-1000;
+            display: none;
+            justify-content: center;
+            position: relative;
+            @media only screen and (max-width: $screen-md-min - 1) {
+                display: flex;
+            }
+
+            .btn {
+                &--back {
+                    position: absolute;
+                    min-width: 0;
+                    width: 32px !important;
+                    height: 32px !important;
+                    padding: 0 !important;
+                    left: 18px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    i {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        &.active {
+            opacity: 1;
+            max-height: 900px;
+            transition: all 800ms ease;
+        }
+
+        &--core {
+            padding: 20px 24px;
+            background-color: $color-white;
+
+            @media only screen and (max-width: $screen-md-min - 1) {
+                padding: 0;
+                background-color: transparent;
+                ul {
+                    width: 100%;
+                }
+            }
+
+            > ul {
+                display: inline-flex;
+                flex-flow: column;
+            }
+
+            a,
+            button {
+                padding: 0 !important;
+                display: block;
+            }
+        }
+
+        li {
+            + li {
+                margin-top: 24px;
+                @media only screen and (max-width: $screen-md-min - 1) {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &.rtl {
+            right: 0;
+        }
+
+        &.ltr {
+            left: 0;
+        }
+
+        &.center {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

@@ -1,0 +1,85 @@
+
+
+.#{$prefix}{
+    &-list{
+        list-style: none;
+
+        li{
+            position: relative;
+        }
+
+        &.row{
+            li{
+                &.col-md-4{
+                    margin-top: 0 !important;
+                    + li{
+                        @media only screen and (max-width: $screen-sm-min - 1) {
+                            margin-top: 30px !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--check{
+            li{
+                &::before{
+                    @extend [class^="icon-"];
+                    content: "\e954";
+                    position: absolute;
+                    top: 15px;
+                    left: 0;
+                    font-size: 21px;
+                }
+                font-size: 20px;
+                padding: 10px 10px 10px 40px;
+            }
+            &--highlight{
+                li{
+                    &:before{
+                        color: $color-green-aqua-1000;
+                    }
+                }
+                &--orange{
+                    li{
+                        &:before{
+                            color: $color-primary-ultra-orange-20;
+                        }
+                    }
+                }
+            }
+        }
+        &--icon{
+            li{
+                display: flex;
+                + li{
+                    margin-top: 24px;
+                }
+            }
+            i{
+                margin-right: 10px;
+                margin-top: 4px;
+            }
+        }
+
+        &--bullets{
+            li{
+                display: flex;
+                &:before{
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    min-width: 8px;
+                    margin-right: 9px;
+                    border-radius: 100%;
+                    top: 5px;
+                    position: relative;
+                    background-color: $color-secondary;
+                }
+                + li{
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+}

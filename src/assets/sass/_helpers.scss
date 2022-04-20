@@ -1,0 +1,199 @@
+/*------------------------------------------------------------------------------Helpers */
+
+
+.ohidden {
+	overflow: hidden;
+}
+.to-right {
+	float: right;
+}
+.to-left {
+	float: left;
+}
+
+.text {
+	&-center {
+		text-align: center;
+	}
+	&-left {
+		text-align: left;
+	}
+	&-right {
+		text-align: right;
+	}
+	&--color-white-all {
+		* {
+			color: $color-white;
+		}
+	}
+	&-underline {
+		text-decoration: underline;
+		color: inherit;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.hidden-element {
+	display: none;
+}
+
+.block {
+	display: block;
+}
+
+.inline {
+	display: inline-block !important;
+}
+
+.content-flex {
+	display: flex;
+}
+
+.full {
+	width: 100%;
+}
+
+.height-full {
+	height: 100%;
+}
+
+.relative-element {
+	position: relative;
+}
+.absolute-element {
+	position: absolute;
+}
+.auto-cent {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+	position: relative;
+}
+
+.hidden-element-two {
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+/*------------------------------------------------------------------------------Medias queries */
+
+.only-lg,
+.lg--only,
+.only-md,
+.md--only,
+.only-sm,
+.sm--only,
+.only-xs,
+.only-xxs {
+	display: none;
+}
+
+@media only screen and (max-width: $screen-lg-min - 1) {
+	.lg {
+		&--not {
+			display: none;
+		}
+	}
+}
+
+@media only screen and (max-width: $screen-md-min - 1) {
+	.only-md {
+		display: block;
+	}
+	.not-md,
+	.md--not {
+		display: none;
+	}
+	.md {
+		&--full {
+			width: 100%;
+		}
+
+		&--not {
+			display: none;
+		}
+		&--only {
+			display: block;
+		}
+		&--title1 {
+			font-size: $font-size-t1;
+			line-height: 32px;
+		}
+	}
+}
+
+@media only screen and (max-width: $screen-sm-min - 1) {
+	.only-sm {
+		display: block;
+	}
+	.not-sm {
+		display: none;
+	}
+	.sm {
+		&--full {
+			width: 100%;
+		}
+
+		&--not {
+			display: none;
+		}
+
+		&--only {
+			display: block;
+		}
+
+		&--to-table {
+			display: table;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	img {
+		&.sm-small {
+			max-width: 40px;
+		}
+	}
+}
+
+@media only screen and (max-width: $screen-xs-min - 1) {
+	.only-xs {
+		display: block;
+	}
+	.not-xs {
+		display: none;
+	}
+	.container {
+		&-xs-full {
+			max-width: 100%;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+@media only screen and (max-width: $screen-xxs-min - 1) {
+	.only-xxs {
+		display: block;
+	}
+	.not-xxs {
+		display: none;
+	}
+}
+
+//Mobile first helpers
+
+@media only screen and (min-width: $screen-md-min) {
+	.md{
+		&-float-children{	
+			> div{
+				float: left;
+			}
+		}
+	}
+}

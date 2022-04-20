@@ -1,0 +1,20 @@
+
+
+.#{$prefix}{
+    &-show-and-exit {
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+        transition: all 800ms ease;
+        &.#{$prefix}{
+            &-show-and-exit{
+                &--show{
+                    transition: all 800ms ease;
+                }
+            }
+        }
+        > div{
+            overflow: hidden;
+        }
+    }
+}

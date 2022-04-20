@@ -1,0 +1,64 @@
+
+
+@import 'assets/sass/config';
+
+.#{$prefix}{
+    &-footer{
+        background-color: $color-primary;
+        color: $color-white;
+
+        &--cont{
+            padding: 40px 0;
+        }
+
+        a{
+            color: $color-white;
+        }
+        ul{
+            li{
+                + li{
+                    margin-top: 12px;
+                }
+            }
+            a{
+                font-size: 14px;
+            }
+        }
+
+        .#{$prefix}{
+            &-logo-group{
+                display: flex;
+                align-items: center;
+                li{
+                    + li{
+                        margin-top: 0;
+                        margin-left: 10px;
+                    }
+                }
+            }
+            &-social-group{
+                display: flex;
+                align-items: center;
+                li{
+                    + li{
+                        margin-top: 0;
+                        margin-left: 22px;
+                    }
+                }
+                i {
+                    font-size: 22px;
+                    display: block;
+                }
+                a{
+                    display: block;
+                }
+            }
+        }
+
+        &__bottom-bar{
+            padding: 16px 0;
+            background-color: $color-footer-bottom-bar;
+        }
+
+    }
+}

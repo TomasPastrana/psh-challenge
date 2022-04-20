@@ -1,0 +1,29 @@
+
+.#{$prefix}{
+    &-as-table{
+        @media only screen and (max-width: $screen-md-min - 1) {
+            flex-flow: column;
+        }
+        > div{
+            width: 50%;
+            flex-grow: 1;
+            @media only screen and (max-width: $screen-md-min - 1) {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                flex-grow: initial;
+                margin-top: 8px;
+            }
+        }
+
+        + .#{$prefix}{
+            &-as-table{
+                margin-top: 16px;
+                @media only screen and (max-width: $screen-md-min - 1) {
+                    margin-top: 0;
+                }
+            }
+        }
+
+    }
+}

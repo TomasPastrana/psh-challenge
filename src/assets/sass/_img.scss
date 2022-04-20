@@ -1,0 +1,47 @@
+
+[class^="img--thumb"], [class*=" img--thumb"]{
+	width: auto;
+	display: block;
+}
+.img {
+	&--elastic {
+		max-width: 100%;
+		width: auto;
+		display: block;
+	}
+	&--full {
+		max-width: 100%;
+		width: 100%;
+		display: block;
+	}
+	&--thumb{
+		max-width: 48px;
+		&--1{
+			max-width: 8px;
+		}
+		&--2{
+			max-width: 16px;
+		}
+		&--3{
+			max-width: 24px;
+		}
+		&--4{
+			max-width: 32px;
+		}
+		&--5{
+			max-width: 40px;
+		}
+		&--6{
+			max-width: 48px;
+		}
+		&--7{
+			max-width: 56px;
+		}
+		&--8{
+			max-width: 64px;
+		}
+		&--9{
+			max-width: 80px;
+		}
+	}
+}

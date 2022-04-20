@@ -1,0 +1,499 @@
+/*----------------------------------------------------Icons */
+
+@font-face {
+	font-family: "betterfly-icons";
+	src: url("../fonts/betterfly-icons.eot?oix2ux");
+	src: url("../fonts/betterfly-icons.eot?oix2ux#iefix") format("embedded-opentype"),
+		url("../fonts/betterfly-icons.ttf?oix2ux") format("truetype"),
+		url("../fonts/betterfly-icons.woff?oix2ux") format("woff"),
+		url("../fonts/betterfly-icons.svg?oix2ux#betterfly-icons") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: "betterfly-icons" !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/*------------------------------------------------------------------------------Sports */
+
+.icon--warning-character:before {
+  content: "\e977";
+}
+.icon--alert-circle:before {
+  content: "\e976";
+}
+.icon--lock:before {
+  content: "\e970";
+}
+.icon--money:before {
+  content: "\e971";
+}
+.icon--trash:before {
+  content: "\e972";
+}
+.icon--male:before {
+  content: "\e973";
+}
+.icon--female:before {
+  content: "\e974";
+}
+.icon--birthdate:before {
+  content: "\e975";
+}
+.icon--chat:before {
+  content: "\e96f";
+}
+.icon--block:before {
+  content: "\e96d";
+}
+.icon--shield-off:before {
+  content: "\e96e";
+}
+.icon--history:before {
+  content: "\e96a";
+}
+.icon--logout:before {
+  content: "\e96b";
+}
+.icon--cube:before {
+  content: "\e96c";
+}
+.icon--shield:before {
+  content: "\e969";
+}
+.icon--mask:before {
+  content: "\e968";
+}
+.icon--arrow-small:before {
+  content: "\e967";
+}
+.icon--whatsapp:before {
+  content: "\e966";
+}
+.icon--close:before {
+  content: "\e965";
+}
+.icon--fa-info-circle:before {
+  content: "\e964";
+}
+.icon--fa-play-circle:before {
+  content: "\e962";
+}
+.icon--fa-globe:before {
+  content: "\e963";
+}
+.icon--opened-eye:before {
+  content: "\e961";
+}
+.icon--closed-eye:before {
+  content: "\e960";
+}
+.icon--heart-filled:before {
+  content: "\e95f";
+}
+.icon--chart-down:before {
+  content: "\e95c";
+}
+.icon--chart-neutral:before {
+  content: "\e95d";
+}
+.icon--chart-up:before {
+  content: "\e95e";
+}
+.icon--check-filled:before {
+  content: "\e95b";
+}
+.icon--warning:before {
+  content: "\e959";
+}
+.icon--checkmark-circle:before {
+  content: "\e95a";
+}
+.icon--phone:before {
+  content: "\e958";
+}
+.icon--clock:before {
+  content: "\e957";
+}
+.icon--check-thin:before {
+  content: "\e954";
+}
+.icon--mail:before {
+  content: "\e955";
+}
+.icon--arrow-full:before {
+  content: "\e956";
+}
+.icon--people:before {
+  content: "\e953";
+}
+.icon--star:before {
+  content: "\e952";
+}
+.icon--youtube-filled:before {
+  content: "\e94d";
+}
+.icon--linkedin-filled:before {
+  content: "\e94e";
+}
+.icon--instagram-filled:before {
+  content: "\e94f";
+}
+.icon--facebook-filled:before {
+  content: "\e950";
+}
+.icon--twitter-filled:before {
+  content: "\e951";
+}
+.icon--file-text:before {
+  content: "\e94c";
+}
+.icon--info:before {
+  content: "\e94b";
+}
+.icon--back-arrow:before {
+  content: "\e946";
+}
+.icon--calendar:before {
+  content: "\e947";
+}
+.icon--credit-card:before {
+  content: "\e948";
+}
+.icon--question:before {
+  content: "\e949";
+}
+.icon--small-check:before, .icon--check-small:before {
+  content: "\e94a";
+}
+.icon--bicicleta-de-mano:before {
+  content: "\e944";
+}
+.icon--hockey:before {
+  content: "\e945";
+}
+.icon--natacion:before {
+  content: "\e942";
+}
+.icon--maquina-de-remo:before {
+  content: "\e943";
+}
+.icon--ciclismo:before {
+  content: "\e941";
+}
+.icon--atletismo:before {
+  content: "\e919";
+}
+.icon--hiit:before {
+  content: "\e91a";
+}
+.icon--caminata:before {
+  content: "\e91b";
+}
+.icon--surf:before {
+  content: "\e91c";
+}
+.icon--sin-datos:before {
+  content: "\e91d";
+}
+.icon--padel:before {
+  content: "\e91e";
+}
+.icon--artes-marciales:before {
+  content: "\e91f";
+}
+.icon--otros:before {
+  content: "\e920";
+}
+.icon--caminata-nordica:before {
+  content: "\e921";
+}
+.icon--escalada:before {
+  content: "\e922";
+}
+.icon--golf:before {
+  content: "\e923";
+}
+.icon--trail-running:before {
+  content: "\e924";
+}
+.icon--futbol:before {
+  content: "\e925";
+}
+.icon--danza:before {
+  content: "\e926";
+}
+.icon--running:before {
+  content: "\e927";
+}
+.icon--ciclismo-en-ruta:before {
+  content: "\e928";
+}
+.icon--ciclismo-de-montana:before {
+  content: "\e929";
+}
+.icon--gimnasia:before {
+  content: "\e92a";
+}
+.icon--pilates:before {
+  content: "\e92b";
+}
+.icon--alpinismo:before {
+  content: "\e92c";
+}
+.icon--tenis:before {
+  content: "\e92d";
+}
+.icon--salto-a-la-cuerda:before {
+  content: "\e92e";
+}
+.icon--zumba:before {
+  content: "\e92f";
+}
+.icon--crossfit:before {
+  content: "\e930";
+}
+.icon--entrenamiento-funcional:before {
+  content: "\e931";
+}
+.icon--caminata-en-cinta:before {
+  content: "\e932";
+}
+.icon--trekking:before {
+  content: "\e933";
+}
+.icon--calistenia:before {
+  content: "\e934";
+}
+.icon--mindfulness:before {
+  content: "\e935";
+}
+.icon--running-en-cinta:before {
+  content: "\e936";
+}
+.icon--bicicleta-fija:before {
+  content: "\e937";
+}
+.icon--yoga:before {
+  content: "\e938";
+}
+.icon--pesas:before {
+  content: "\e939";
+}
+.icon--boxeo:before {
+  content: "\e93a";
+}
+.icon--spinning:before {
+  content: "\e93b";
+}
+.icon--eliptica:before {
+  content: "\e93c";
+}
+.icon--tareas-del-hogar:before {
+  content: "\e93d";
+}
+.icon--biatlon:before {
+  content: "\e93e";
+}
+.icon--bicicleta-electrica:before {
+  content: "\e93f";
+}
+.icon--badminton:before {
+  content: "\e940";
+}
+.icon--youtube:before {
+  content: "\e917";
+}
+.icon--instagram:before {
+  content: "\e918";
+}
+.icon--plant:before {
+  content: "\e916";
+}
+.icon--heart:before {
+  content: "\e913";
+}
+.icon--burn:before {
+  content: "\e914";
+}
+.icon--user:before {
+  content: "\e915";
+}
+.icon--twitter:before {
+  content: "\e90e";
+}
+.icon--facebook:before {
+  content: "\e90f";
+}
+.icon--down-arrow:before {
+  content: "\e910";
+}
+.icon--copy:before {
+  content: "\e911";
+}
+.icon--linkedin:before {
+  content: "\e912";
+}
+.icon--sneakers:before {
+  content: "\e900";
+}
+.icon--meditation:before {
+  content: "\e901";
+}
+.icon--education:before {
+  content: "\e902";
+}
+.icon--virtual-fitness:before {
+  content: "\e903";
+}
+.icon--online-nutritionist:before {
+  content: "\e904";
+}
+.icon--mind-heath:before {
+  content: "\e905";
+}
+.icon--savings:before {
+  content: "\e906";
+}
+.icon--medical-atention:before {
+  content: "\e907";
+}
+.icon--accidental-death:before {
+  content: "\e908";
+}
+.icon--handicapped:before {
+  content: "\e909";
+}
+.icon--health:before {
+  content: "\e90a";
+}
+.icon--mouse:before {
+  content: "\e90b";
+}
+.icon--download:before {
+  content: "\e90c";
+}
+.icon--share:before {
+  content: "\e90d";
+}
+
+.icon {
+	&--circle {
+		width: 56px;
+		height: 56px;
+		background: $color-primary;
+    color: $color-white;
+		border-radius: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+    &-outline{
+      font-size: 12px;
+      width: 20px;
+      height: 20px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%;
+      border: solid 2px $color-primary;
+
+    }
+
+    &--2{
+      width:  16px;
+      height: 16px;
+    }
+
+    &--3{
+      width:  24px;
+      height: 24px;
+    }
+
+    &--4{
+      width:  32px;
+      height: 32px;
+    }
+
+    &--5{
+      width:  40px;
+      height: 40px;
+    }
+
+    &--6{
+      width:  48px;
+      height: 48px;
+    }
+
+	}
+
+	&--md {
+		font-size: 40px;
+	}
+
+  &--sm{
+    font-size: 16px;
+  }
+
+}
+
+.icon{
+  &-img{
+    display: block;
+    &--md{
+      width: 72px;
+      @media only screen and (max-width: $screen-md-min - 1) {
+        width: 64px;
+      }
+    }
+  }
+}
+
+.icon {
+	&--animated-mouse-scroll {
+		color: $color-white;
+		width: 40px;
+		.scroll {
+			-webkit-animation: scrolling 1s alternate infinite ease-in-out;
+			animation: scrolling 1s alternate infinite ease-in-out;
+		}
+	}
+}
+
+@-webkit-keyframes scrolling {
+	0% {
+		-webkit-transform: translate(0px, 0px);
+		transform: translate(0px, 0px);
+	}
+
+	100% {
+		-webkit-transform: translate(0px, 80px);
+		transform: translate(0px, 80px);
+	}
+}
+
+@keyframes scrolling {
+	0% {
+		-webkit-transform: translate(0px, 0px);
+		transform: translate(0px, 0px);
+	}
+
+	100% {
+		-webkit-transform: translate(0px, 80px);
+		transform: translate(0px, 80px);
+	}
+}

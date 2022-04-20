@@ -1,0 +1,90 @@
+/*------------------------------------------------------------------------------Offset breakpoints */
+
+@mixin offset-margin-breakpoint($margin, $value) {
+	margin-#{$margin}: $value !important;
+}
+
+@media only screen and (min-width: $screen-xxs-min) {
+	@for $i from 0 through 6 {
+		@each $margin in top, bottom {
+			.xxs-offset-#{$margin}-#{$i} {
+				@include offset-margin-breakpoint($margin, 10px * $i);
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: $screen-xs-min) {
+	.xs-offset-top-0{
+		margin-top: 0 !important;
+	}
+	@for $i from 0 through 12 {
+		@each $margin in top, bottom {
+			.xs-offset-#{$margin}-#{$i} {
+				@include offset-margin-breakpoint($margin, 10px * $i);
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: $screen-sm-min) {
+	.sm-offset-top-0{
+		margin-top: 0 !important;
+	}
+	@for $i from 0 through 12 {
+		@each $margin in top, bottom {
+			.sm-offset-#{$margin}-#{$i} {
+				@include offset-margin-breakpoint($margin, 10px * $i);
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: $screen-md-min) {
+	.md-offset-top-0{
+		margin-top: 0 !important;
+	}
+	@for $i from 0 through 12 {
+		@each $margin in top, bottom {
+			.md-offset-#{$margin}-#{$i} {
+				@include offset-margin-breakpoint($margin, 10px * $i);
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: $screen-l-min) {
+	@for $i from 0 through 6 {
+		@each $margin in top, bottom {
+			.l-offset-#{$margin}-#{$i} {
+				@include offset-margin-breakpoint($margin, 10px * $i);
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: $screen-lg-min) {
+	.lg-offset-top-0{
+		margin-top: 0 !important;
+	}
+	@for $i from 0 through 6 {
+		@each $margin in top, bottom {
+			.lg-offset-#{$margin}-#{$i} {
+				@include offset-margin-breakpoint($margin, 10px * $i);
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: $screen-xl-min) {
+	.xl-offset-top-0{
+		margin-top: 0 !important;
+	}
+	@for $i from 0 through 6 {
+		@each $margin in top, bottom {
+			.xl-offset-#{$margin}-#{$i} {
+				@include offset-margin-breakpoint($margin, 10px * $i);
+			}
+		}
+	}
+}

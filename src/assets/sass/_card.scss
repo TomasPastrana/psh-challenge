@@ -1,0 +1,25 @@
+
+
+.#{$prefix} {
+    &-card {
+        padding: 24px 26px;
+        border: 1px solid $color-gray-blue-400;
+        border-radius: 12px;
+
+        &--filled {
+            background-color: $color-background-grey-1000;
+            border: 1px solid transparent;
+        }
+
+        &--type-1 {
+            background-color: $color-white;
+            border-color: $color-white;
+        }
+
+        &--type-2 {
+            padding: 40px;
+            border-radius: 24px;
+        }
+
+    }
+}
