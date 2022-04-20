@@ -24,7 +24,7 @@
         &--check{
             li{
                 &::before{
-                    @extend [class^="icon-"];
+                    @extend [class^="icon-"] !optional;
                     content: "\e954";
                     position: absolute;
                     top: 15px;

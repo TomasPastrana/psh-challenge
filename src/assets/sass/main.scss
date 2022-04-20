@@ -1,7 +1,6 @@
 @import "_reset";
 
 @import "_config";
-@import "_fonts";
 @import "_base";
 
 @import "libs/_bootstrap-grid";
@@ -9,7 +8,6 @@
 @import "_layouts";
 @import "_tables";
 
-@import "_icons";
 @import "_buttons";
 @import "_circle";
 @import "_card";
@@ -23,29 +21,10 @@
 
 @import "_sidebar";
 
-@import "BFComponents/_BFLoaderCardTransition";
-@import "BFComponents/_BFLoaderImgTransition";
-@import "BFComponents/_BFFade";
-@import "BFComponents/_BFShowAndExit";
-@import "BFComponents/_BFTabs";
-@import "BFComponents/_BFExpand";
-@import "BFComponents/_BFSelect";
-@import "BFComponents/_BFFloatingElement";
-@import "BFComponents/_BFFloatingButton";
-@import "BFComponents/_BFAccordion";
-@import "BFComponents/_BFDropdown";
-@import "BFComponents/_BFMainCover";
-@import "BFComponents/_BFCreditCardSketch";
-@import "BFComponents/_BFTooltip";
-@import "BFComponents/_BFStepBox";
-@import "BFComponents/_BFModal";
-
 @import "_slider";
 
 @import "_header";
 @import "_footer";
-
-@import "_betterplace"; //All Project Custom styles
 
 @import "_offset-breakpoints";
 @import "_helpers";
