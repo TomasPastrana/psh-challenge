@@ -1,28 +1,20 @@
 import axios from "axios";
-//Services
-import AuthService from "services/AuthService";
 
 const CancelToken = axios.CancelToken;
 const source = CancelToken.source(); //eslint-disable-line
 let cancel;
 
-export const configPost = (method = 'post', name, data, endpoint = process.env.REACT_APP_API_ENDPOINT_CHECKOUT) => {
-	let url = name ? endpoint + name : endpoint; //eslint-disable-line
-	let tkn = AuthService.getToken();
+export const config = (name, args) => {
 	return {
 		async: true,
-		crossDomain: false,
-		method: method,
-		url: name ? endpoint + name : endpoint,
-		data: data,
-		headers: {
-			"Authorization": 'Bearer ' + tkn,
-			"Content-Type": "application/json"
+		crossDomain: true,
+		method: 'get',
+		url: process.env.REACT_APP_API_ENDPOINT + name,
+		data: {
+			name: name,
+			args: args || null,
+			session: null
 		},
-		cancelToken: new CancelToken(function executor(c) {
-			// An executor function receives a cancel function as a parameter "Accept-Language": locale.navigator_lang
-			cancel = c;
-		})
 	};
 };
 
