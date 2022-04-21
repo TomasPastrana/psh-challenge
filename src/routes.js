@@ -1,15 +1,20 @@
 import Home from "./views/pages/home/Home";
+import Quotes from "./views/pages/quotes/Quotes";
 
 var dashRoutes = [
   {
     path: "/home",
-    mini: "L",
+    mini: "H",
     component: Home,
     layout: "/site",
-    logged: false,
     layoutType: 'default',
-    products: true,
-    content: true
+  },
+  {
+    path: "/:series/quotes",
+    mini: "Q",
+    component: Quotes,
+    layout: "/site",
+    layoutType: 'default',
   },
 ];
 
