@@ -6,10 +6,10 @@ export default function LoadingSpinner(props) {
         loadingText = 'Cargando...',
         className = ''
     } = props;
-    return(
-        <div className={`bf-loading-area ${className}`}>
-            <div className={'bf-loading-elements'}>
-                <div className={'bf-loading-box offset-bottom-1'}>
+    return (
+        <div className={`psh-loading-area ${className}`}>
+            <div className={'psh-loading-elements'}>
+                <div className={'psh-loading-box offset-bottom-1'}>
                     <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
                 </div>
                 <div>

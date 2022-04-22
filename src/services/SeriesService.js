@@ -6,11 +6,8 @@ const SeriesService = {
 		return axios(BaseService.config('/series'));
 	},
 	getQuotesBySeries: (name, all = true) => {
-		let args = {
-			series: name,
-			all: all,
-		}
-		return axios(BaseService.config('/quote', args));
+		return axios(BaseService.config(`/quote/?series=${name}&all=${all}`));
+		/* `/quote?series=${name}&all=${all}` */
 	},
 };
 

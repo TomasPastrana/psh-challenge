@@ -30,7 +30,7 @@ export default function Site(props) {
 
 	return (
 		<>
-			<div className={`bf-main-layout ${layoutType}`}>
+			<div className={`psh-main-layout ${layoutType}`}>
 				<Switch history={props.history}>
 					{getRoutes()}
 					<Redirect from="/" to="/home" />

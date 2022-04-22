@@ -12,7 +12,7 @@ export const config = (name, args) => {
 		url: process.env.REACT_APP_API_ENDPOINT + name,
 		data: {
 			name: name,
-			args: args || null,
+			args: args,
 			session: null
 		},
 	};
