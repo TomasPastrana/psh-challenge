@@ -11,7 +11,7 @@ export default function Pagination(props) {
 
 	return (
 		<nav>
-			<ul className="pagination mt-4 justify-content-end">
+			<ul className="pagination mt-4 pb-4 justify-content-end">
 				{pageNumbers.map(number => {
 					return (
 						<li key={number} className="page-item">

@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { AppContext } from 'context/provider';
 import LoadingSpinner from "components/LoadingSpinner/LoadingSpinner";
 import routes from "routes.js";
+import Header from 'components/Header/Header';
 
 export default function Site(props) {
 	const { loading, layoutType, } = useContext(AppContext);
@@ -31,6 +32,7 @@ export default function Site(props) {
 	return (
 		<>
 			<div className={`psh-main-layout ${layoutType}`}>
+				<Header />
 				<Switch history={props.history}>
 					{getRoutes()}
 					<Redirect from="/" to="/home" />

@@ -75,8 +75,8 @@ export default function Home() {
 	}
 
 	return (
-		<div className='container'>
-			<h1 className='h2 text--center text--secondary pt-5 xxs-offset-bottom-2'>Series List</h1>
+		<div className='container xxs-offset-top-7'>
+			<h1 className='h2 text--center text--secondary xxs-offset-bottom-2'>Series List</h1>
 			<p className='text--center text--primary text--title2 xxs-offset-bottom-5'>
 				Here you'll find a list of selectable series to show super duper famous quotes
 			</p>
@@ -84,7 +84,7 @@ export default function Home() {
 				<button className='btn btn--primary'>+ Add</button>
 			</div>
 			<div className='d-flex justify-content-between xxs-offset-bottom-5'>
-				<input className="form-control col-xl-3 mr-sm-2" type="search" placeholder="Search" aria-label="Search" value={filterAll} onChange={filterAllData} />
+				<input className="form-control" type="search" placeholder="Search" aria-label="Search" value={filterAll} onChange={filterAllData} />
 				<button className='btn btn--secondary' onClick={sortSeries}>{sorted ? 'Reset order' : 'Sort Alphabeticaly'}</button>
 			</div>
 			<Series onSeries={currentSeries} />

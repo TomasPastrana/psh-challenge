@@ -5,7 +5,7 @@
 }
 
 @media only screen and (min-width: $screen-xxs-min) {
-	@for $i from 0 through 6 {
+	@for $i from 0 through 7 {
 		@each $margin in top, bottom {
 			.xxs-offset-#{$margin}-#{$i} {
 				@include offset-margin-breakpoint($margin, 10px * $i);
