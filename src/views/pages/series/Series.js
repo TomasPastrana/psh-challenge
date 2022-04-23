@@ -11,9 +11,9 @@ export default function Series({ onSeries }) {
 						<a
 							key={i}
 							className="btn btn--secondary col-12 col-xl-2 d-flex justify-content-center xxs-offset-bottom-1 lg-offset-bottom-0"
-							href={`/${s}/quotes`}
+							href={`/${s.value.replaceAll(' ', '_').toLowerCase()}/quotes`}
 						>
-							{s.replaceAll('_', ' ').toUpperCase()}
+							{s.value}
 						</a>
 					)
 				})}

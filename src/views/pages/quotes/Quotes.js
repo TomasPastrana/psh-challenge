@@ -14,7 +14,7 @@ export default function Quotes() {
 		setLoading,
 	} = useContext(AppContext);
 
-	const title = `Famous ${seriesName.replaceAll('_', ' ').toUpperCase() || 'Series'} Quotes`;
+	const title = seriesName.replaceAll('_', ' ').toUpperCase() || 'Series';
 
 	const [quotes, setQuotes] = useState([]);
 	const [quotesPerPage] = useState(10);
@@ -41,7 +41,7 @@ export default function Quotes() {
 
 	return (
 		<div className="container">
-			<h2 className="h4 text--primary pt-3">{title}</h2>
+			<h2 className="h4 text--primary pt-3">Famous <span className="text--secondary">{title}</span> Quotes</h2>
 			<ul className="list-group">
 				{currentQuotes?.map((q, i) => {
 					return (

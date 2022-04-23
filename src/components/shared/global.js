@@ -2,7 +2,8 @@ import React from "react";
 
 export function sortAlphabeticaly(data, prop) {
 	let sorted;
-	if (prop) {
+	console.log(data)
+	if (typeof prop === 'string') {
 		sorted = data?.sort(
 			function (a, b) {
 				if (a[prop] > b[prop]) {
