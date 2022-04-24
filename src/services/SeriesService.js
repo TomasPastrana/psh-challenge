@@ -9,6 +9,9 @@ const SeriesService = {
 		return axios(BaseService.config(`/quote/?series=${name}&all=${all}`));
 		/* `/quote?series=${name}&all=${all}` */
 	},
+	getRandomQuotes: () => {
+		return axios(BaseService.config(`/all`));
+	},
 };
 
 export default SeriesService;

@@ -1,23 +1,14 @@
 
-import React, { useState, useEffect, useContext } from 'react';
-
-import { AppContext } from 'context/provider';
-
-import BFDropDown from 'components/BFDropDown/BFDropDown';
-import pshLogo from 'assets/img/logo_red_psh.svg';
-
+import React, { useState, useEffect } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
-import BFStepBox from 'components/BFStepBox/BFStepBox';
-import BFScrollTo from 'components/BFScrollTo/BFScrollTo';
+// assets
+import pshLogo from 'assets/img/logo_red_psh.svg';
 
 const Header = (props) => {
 
 	const {
-		headerType = 'main',
 		extOpenMobileMenu = false,
 	} = props;
-
-	const { products } = useContext(AppContext);
 
 	//Show mobile menu on mobile screens
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -55,7 +46,6 @@ const Header = (props) => {
 
 	return (
 		<>
-			{/* <header className={`psh-header ${mobileMenuOpen ? 'mobile-menu-is-opened' : ''} ${`${mobileMenuOverlayRemove ? 'mobile-menu-overlay-is-removed' : ''}`}`}> */}
 			<header className={`psh-header ${mobileMenuOpen && 'mobile-menu-is-opened'} ${mobileMenuOverlayRemove && 'mobile-menu-overlay-is-removed'}`}>
 				<div className="container d-flex justify-content-between align-items-center">
 					<div className={'d-flex align-items-center'}>
@@ -77,7 +67,7 @@ const Header = (props) => {
 								</li>
 
 								<li className={'mobile-order-1 mobile-divider'}>
-									<a href="https://gobetterfly.com/es/siniestros/" target={'_blank'} rel="noreferrer">
+									<a href="/home" target={'_self'} rel="noreferrer">
 										<span className={'psh-circle psh-circle--mobile-header md--only'}>
 											<i className={'icon icon--shield'}></i>
 										</span>
@@ -86,7 +76,7 @@ const Header = (props) => {
 								</li>
 
 								<li className={'mobile-order-1 mobile-divider'}>
-									<a href="https://gobetterfly.com/es/siniestros/" target={'_blank'} rel="noreferrer">
+									<a href="/quotes" target={'_self'} rel="noreferrer">
 										<span className={'psh-circle psh-circle--mobile-header md--only'}>
 											<i className={'icon icon--shield'}></i>
 										</span>

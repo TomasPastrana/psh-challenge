@@ -9,6 +9,7 @@ import { matchSorter } from 'match-sorter';
 export default function Home() {
 
 	const {
+		setLayoutType,
 		setLoading,
 	} = useContext(AppContext);
 
@@ -24,6 +25,7 @@ export default function Home() {
 	const currentSeries = filtered.slice(indexOfFirstSeries, indexOfLastSeries);
 
 	useEffect(() => {
+		setLayoutType('psh-main-layout--default');
 		setLoading(true);
 		SeriesService.getTVSeries()
 			.then(res => {
@@ -60,7 +62,6 @@ export default function Home() {
 		const result = matchSorter(series, filterAll, {
 			keys: [filterAll === '' ? 'id' : 'value'], threshold: matchSorter.rankings.WORD_STARTS_WITH
 		});
-		console.log(result);
 		setFiltered(result);
 	}
 
@@ -75,7 +76,7 @@ export default function Home() {
 	}
 
 	return (
-		<div className='container xxs-offset-top-7'>
+		<div className='container pt-5'>
 			<h1 className='h2 text--center text--secondary xxs-offset-bottom-2'>Series List</h1>
 			<p className='text--center text--primary text--title2 xxs-offset-bottom-5'>
 				Here you'll find a list of selectable series to show super duper famous quotes

@@ -6,7 +6,7 @@ import routes from "routes.js";
 import Header from 'components/Header/Header';
 
 export default function Site(props) {
-	const { loading, layoutType, } = useContext(AppContext);
+	const { loading, layoutType } = useContext(AppContext);
 
 	const getRoutes = () => {
 		return routes.map((prop, key) => {

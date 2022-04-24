@@ -1,21 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "context/provider";
-// services
-import SeriesService from "../../../services/SeriesService";
+// components
 import Pagination from "components/Pagination/Pagination";
 import { sortAlphabeticaly } from "components/shared/global";
+// services
+import SeriesService from "../../../services/SeriesService";
 
-export default function Quotes() {
-
-	const url = window.location.pathname;
-	const seriesName = url.substring(url.indexOf('/', 0) + 1).split('/')[0];
+export default function RandomQuotes(props) {
 
 	const {
 		setLayoutType,
 		setLoading,
 	} = useContext(AppContext);
-
-	const title = seriesName.replaceAll('_', ' ').toUpperCase() || 'Series';
 
 	const [quotes, setQuotes] = useState([]);
 	const [quotesPerPage] = useState(10);
@@ -28,8 +24,7 @@ export default function Quotes() {
 	useEffect(() => {
 		setLayoutType('psh-main-layout--default');
 		setLoading(true);
-		console.log(seriesName)
-		SeriesService.getQuotesBySeries(seriesName)
+		SeriesService.getRandomQuotes()
 			.then(res => {
 				setQuotes(sortAlphabeticaly(res.data, 'author'));
 			})
@@ -43,7 +38,7 @@ export default function Quotes() {
 
 	return (
 		<div className="container">
-			<h2 className="h4 text--primary pt-3">Famous <span className="text--secondary">{title}</span> Quotes</h2>
+			<h2 className="h4 text--primary pt-3">Famous Random Series Quotes</h2>
 			<ul className="list-group">
 				{currentQuotes?.map((q, i) => {
 					return (
