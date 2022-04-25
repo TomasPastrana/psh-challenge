@@ -10,7 +10,7 @@ export default function Series({ onSeries }) {
 					return (
 						<a
 							key={i}
-							className="btn btn--secondary col-12 col-xl-2 d-flex justify-content-center xxs-offset-bottom-1 lg-offset-bottom-0"
+							className="psh-card psh-card--type-1 psh-card--type-2 col-12 col-xl-2 d-flex align-items-center justify-content-center text--center xxs-offset-bottom-1 lg-offset-bottom-0"
 							href={`/${s.value.replaceAll(' ', '_').toLowerCase()}/quotes`}
 						>
 							{s.value}

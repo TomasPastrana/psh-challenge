@@ -14,7 +14,7 @@ export default function Home() {
 		setLoading,
 	} = useContext(AppContext);
 
-	const [series, setSeries] = useState([{id: 0, value: 'as'}, {id: 1, value: 'b 1'}, {id: 2, value: 'a 2'}, {id: 3, value: 'z 3'}, {id: 4, value: 'j 4'}, {id: 5, value: 'd 5'}]);
+	const [series, setSeries] = useState([/* {id: 0, value: 'as'}, {id: 1, value: 'b 1'}, {id: 2, value: 'a 2'}, {id: 3, value: 'z 3'}, {id: 4, value: 'j 4'}, {id: 5, value: 'd 5'} */]);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [seriesPerPage] = useState(5);
 	const [sorted, setSorted] = useState(false);
@@ -27,16 +27,19 @@ export default function Home() {
 	const currentSeries = filtered.slice(indexOfFirstSeries, indexOfLastSeries);
 
 	useEffect(() => {
+		//localStorage.clear()
 		setLayoutType('psh-main-layout--default');
 		setLoading(true);
 		SeriesService.getTVSeries()
 			.then(res => {
-				/* let fixedData = [];
+				let fixedData = [];
 				res.data.map((d, i) => {
-					fixedData.push({id: i, value: d.replaceAll('_', ' ').toUpperCase()});
+					fixedData.push({ id: i, value: d.replaceAll('_', ' ').toUpperCase() });
 				});
-				setSeries(fixedData);
-				setFiltered(fixedData); */
+				let localSeries = JSON.parse(localStorage.getItem('series')) || [];
+
+				setSeries([...fixedData, ...localSeries]);
+				setFiltered([...fixedData, ...localSeries]);
 			})
 			.catch(error => {
 				console.log(error);
@@ -77,9 +80,15 @@ export default function Home() {
 		setSorted(!sorted);
 	}
 
+	function refreshSeries(storedSeries) {
+		console.log(storedSeries)
+		setSeries([...series, ...storedSeries]);
+		setFiltered([...series, ...storedSeries]);
+	}
+
 	return (
 		<>
-			<AddSerie onOpen={openPopup} onClose={() => setOpenPopup(false)} />
+			<AddSerie onOpen={openPopup} onCount={series.length} onClose={() => setOpenPopup(false)} onNewSeries={(stored) => refreshSeries(stored)} />
 			<div className='container pt-5'>
 				<h1 className='h2 text--center text--secondary xxs-offset-bottom-2'>Series List</h1>
 				<p className='text--center text--primary text--title2 xxs-offset-bottom-5'>
