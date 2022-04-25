@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/psh-challenge/static/css/main.b42fa591.chunk.css",
+    "main.js": "/psh-challenge/static/js/main.64fbb6b3.chunk.js",
+    "main.js.map": "/psh-challenge/static/js/main.64fbb6b3.chunk.js.map",
+    "runtime-main.js": "/psh-challenge/static/js/runtime-main.73563aa4.js",
+    "runtime-main.js.map": "/psh-challenge/static/js/runtime-main.73563aa4.js.map",
+    "static/js/2.0a1320b4.chunk.js": "/psh-challenge/static/js/2.0a1320b4.chunk.js",
+    "static/js/2.0a1320b4.chunk.js.map": "/psh-challenge/static/js/2.0a1320b4.chunk.js.map",
+    "index.html": "/psh-challenge/index.html",
+    "static/css/main.b42fa591.chunk.css.map": "/psh-challenge/static/css/main.b42fa591.chunk.css.map",
+    "static/js/2.0a1320b4.chunk.js.LICENSE.txt": "/psh-challenge/static/js/2.0a1320b4.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/psh-challenge/static/media/betterfly-icons.f117a312.ttf",
+    "static/media/logo_red_psh.61bf83dc.svg": "/psh-challenge/static/media/logo_red_psh.61bf83dc.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.73563aa4.js",
+    "static/js/2.0a1320b4.chunk.js",
+    "static/css/main.b42fa591.chunk.css",
+    "static/js/main.64fbb6b3.chunk.js"
+  ]
+}
