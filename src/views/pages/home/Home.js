@@ -5,6 +5,7 @@ import Series from '../series/Series';
 import Pagination from 'components/Pagination/Pagination';
 import { sortAlphabeticaly } from 'components/shared/global';
 import { matchSorter } from 'match-sorter';
+import AddSerie from 'views/alerts/AddSerie';
 
 export default function Home() {
 
@@ -19,6 +20,7 @@ export default function Home() {
 	const [sorted, setSorted] = useState(false);
 	const [filterAll, setFilterAll] = useState('');
 	const [filtered, setFiltered] = useState([]);
+	const [openPopup, setOpenPopup] = useState(false);
 
 	const indexOfLastSeries = currentPage * seriesPerPage;
 	const indexOfFirstSeries = indexOfLastSeries - seriesPerPage;
@@ -76,24 +78,27 @@ export default function Home() {
 	}
 
 	return (
-		<div className='container pt-5'>
-			<h1 className='h2 text--center text--secondary xxs-offset-bottom-2'>Series List</h1>
-			<p className='text--center text--primary text--title2 xxs-offset-bottom-5'>
-				Here you'll find a list of selectable series to show super duper famous quotes
-			</p>
-			<div className='d-flex justify-content-end xxs-offset-bottom-3'>
-				<button className='btn btn--primary'>+ Add</button>
+		<>
+			<AddSerie onOpen={openPopup} onClose={() => setOpenPopup(false)} />
+			<div className='container pt-5'>
+				<h1 className='h2 text--center text--secondary xxs-offset-bottom-2'>Series List</h1>
+				<p className='text--center text--primary text--title2 xxs-offset-bottom-5'>
+					Here you'll find a list of selectable series to show super duper famous quotes
+				</p>
+				<div className='d-flex justify-content-end xxs-offset-bottom-3'>
+					<button className='btn btn--primary' onClick={() => setOpenPopup(true)}>+ Add</button>
+				</div>
+				<div className='d-flex flex-column flex-md-row justify-content-between xxs-offset-bottom-5'>
+					<input className="form-control col-md-4 col-lg-3 xxs-offset-bottom-2 sm-offset-bottom-0" type="search" placeholder="Search" aria-label="Search" value={filterAll} onChange={filterAllData} />
+					<button className='btn btn--secondary' onClick={sortSeries}>{sorted ? 'Reset order' : 'Sort Alphabeticaly'}</button>
+				</div>
+				<Series onSeries={currentSeries} />
+				<Pagination
+					onSeriesPerPage={seriesPerPage}
+					onTotalSeries={filtered.length}
+					onChangePage={(number) => setCurrentPage(number)}
+				/>
 			</div>
-			<div className='d-flex justify-content-between xxs-offset-bottom-5'>
-				<input className="form-control" type="search" placeholder="Search" aria-label="Search" value={filterAll} onChange={filterAllData} />
-				<button className='btn btn--secondary' onClick={sortSeries}>{sorted ? 'Reset order' : 'Sort Alphabeticaly'}</button>
-			</div>
-			<Series onSeries={currentSeries} />
-			<Pagination
-				onSeriesPerPage={seriesPerPage}
-				onTotalSeries={filtered.length}
-				onChangePage={(number) => setCurrentPage(number)}
-			/>
-		</div>
+		</>
 	)
 }

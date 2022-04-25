@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
-import BFStepBox from './BFStepBox';
+import Modal from './Modal';
 
 test('init', () => {
-  render(<BFStepBox />);
+  render(<Modal />);
 });
