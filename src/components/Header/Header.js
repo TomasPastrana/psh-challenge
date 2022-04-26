@@ -62,14 +62,13 @@ const Header = (props) => {
 								<li className={'md--only psh-back-menu-area'}>
 									<button type={'button'} className={'btn btn--back btn--back--main'} onClick={closeMobileMenu}>
 										<i className={'icon--arrow-full'} />
-										{/* <strong>X Close</strong> */}
 									</button>
 								</li>
 
 								<li className={'mobile-order-1 mobile-divider'}>
 									<a href="/home" target={'_self'} rel="noreferrer">
 										<span className={'psh-circle psh-circle--mobile-header md--only'}>
-											<i className={'icon icon--shield'}></i>
+											<i className={'icon icon--arrow-small'}></i>
 										</span>
 										<strong>Series</strong>
 									</a>
@@ -78,14 +77,11 @@ const Header = (props) => {
 								<li className={'mobile-order-1 mobile-divider'}>
 									<a href="/quotes" target={'_self'} rel="noreferrer">
 										<span className={'psh-circle psh-circle--mobile-header md--only'}>
-											<i className={'icon icon--shield'}></i>
+											<i className={'icon icon--arrow-small'}></i>
 										</span>
 										<strong>Quotes</strong>
 									</a>
 								</li>
-								{/* <li className={'mobile-order-0'}>
-
-								</li> */}
 							</ul>
 						</div>
 					</nav>

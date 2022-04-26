@@ -10,17 +10,21 @@ import AddSerie from 'views/alerts/AddSerie';
 export default function Home() {
 
 	const {
+		editedSerie,
+		openPopup,
+		setEditedSerie,
 		setLayoutType,
 		setLoading,
+		setOpenPopup,
 	} = useContext(AppContext);
 
-	const [series, setSeries] = useState([/* {id: 0, value: 'as'}, {id: 1, value: 'b 1'}, {id: 2, value: 'a 2'}, {id: 3, value: 'z 3'}, {id: 4, value: 'j 4'}, {id: 5, value: 'd 5'} */]);
+	const [series, setSeries] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [seriesPerPage] = useState(5);
 	const [sorted, setSorted] = useState(false);
 	const [filterAll, setFilterAll] = useState('');
 	const [filtered, setFiltered] = useState([]);
-	const [openPopup, setOpenPopup] = useState(false);
+	const [error, setError] = useState('');
 
 	const indexOfLastSeries = currentPage * seriesPerPage;
 	const indexOfFirstSeries = indexOfLastSeries - seriesPerPage;
@@ -28,6 +32,7 @@ export default function Home() {
 
 	useEffect(() => {
 		//localStorage.clear()
+		setEditedSerie();
 		setLayoutType('psh-main-layout--default');
 		setLoading(true);
 		SeriesService.getTVSeries()
@@ -37,12 +42,15 @@ export default function Home() {
 					fixedData.push({ id: i, value: d.replaceAll('_', ' ').toUpperCase() });
 				});
 				let localSeries = JSON.parse(localStorage.getItem('series')) || [];
-
-				setSeries([...fixedData, ...localSeries]);
-				setFiltered([...fixedData, ...localSeries]);
+				localSeries?.map(ls => {
+					fixedData.push({ id:ls.id, value: ls.value.replaceAll('_', ' ').toUpperCase(), img: ls.img, userCreated: ls.userCreated });
+				})
+				setSeries(fixedData);
+				setFiltered(fixedData);
 			})
 			.catch(error => {
 				console.log(error);
+				setError(error.toString());
 			})
 			.finally(() => {
 				setLoading(false);
@@ -80,15 +88,18 @@ export default function Home() {
 		setSorted(!sorted);
 	}
 
-	function refreshSeries(storedSeries) {
-		console.log(storedSeries)
-		setSeries([...series, ...storedSeries]);
-		setFiltered([...series, ...storedSeries]);
+	function refreshSeries(newSerie) {
+		const result = series;
+		let index = result.findIndex(e => e.id === newSerie.id);
+		result.splice(index === -1 ? result.length : index, 1, { id: newSerie.id, value: newSerie.value.replaceAll('_', ' ').toUpperCase(), img: newSerie.img, userCreated: newSerie.userCreated });
+
+		setSeries(result);
+		setFiltered(result);
 	}
 
 	return (
 		<>
-			<AddSerie onOpen={openPopup} onCount={series.length} onClose={() => setOpenPopup(false)} onNewSeries={(stored) => refreshSeries(stored)} />
+			<AddSerie onOpen={openPopup} onEdit={editedSerie || null} onCount={series.length} onClose={() => setOpenPopup(false)} onNewSeries={(newSerie) => refreshSeries(newSerie)} />
 			<div className='container pt-5'>
 				<h1 className='h2 text--center text--secondary xxs-offset-bottom-2'>Series List</h1>
 				<p className='text--center text--primary text--title2 xxs-offset-bottom-5'>
@@ -108,6 +119,7 @@ export default function Home() {
 					onChangePage={(number) => setCurrentPage(number)}
 				/>
 			</div>
+			<p className='text--center text--body4 text--color-valentine-red-800'>{error}</p>
 		</>
 	)
 }

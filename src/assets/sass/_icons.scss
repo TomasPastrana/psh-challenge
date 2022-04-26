@@ -1,12 +1,12 @@
 /*----------------------------------------------------Icons */
 
 @font-face {
-	font-family: "betterfly-icons";
-	src: url("../fonts/betterfly-icons.eot?oix2ux");
-	src: url("../fonts/betterfly-icons.eot?oix2ux#iefix") format("embedded-opentype"),
-		url("../fonts/betterfly-icons.ttf?oix2ux") format("truetype"),
-		url("../fonts/betterfly-icons.woff?oix2ux") format("woff"),
-		url("../fonts/betterfly-icons.svg?oix2ux#betterfly-icons") format("svg");
+	font-family: "psh-icons";
+	src: url("../fonts/psh-icons.eot?oix2ux");
+	src: url("../fonts/psh-icons.eot?oix2ux#iefix") format("embedded-opentype"),
+		url("../fonts/psh-icons.ttf?oix2ux") format("truetype"),
+		url("../fonts/psh-icons.woff?oix2ux") format("woff"),
+		url("../fonts/psh-icons.svg?oix2ux#psh-icons") format("svg");
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
@@ -15,7 +15,7 @@
 [class^="icon-"],
 [class*=" icon-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
-	font-family: "betterfly-icons" !important;
+	font-family: "psh-icons" !important;
 	speak: never;
 	font-style: normal;
 	font-weight: normal;
@@ -389,6 +389,9 @@
 }
 .icon--share:before {
   content: "\e90d";
+}
+.icon--pencil:before {
+  content: "\e978";
 }
 
 .icon {

@@ -20,6 +20,7 @@ export default function Quotes() {
 	const [quotes, setQuotes] = useState([]);
 	const [quotesPerPage] = useState(10);
 	const [currentPage, setCurrentPage] = useState(1);
+	const [error, setError] = useState('');
 	
 	const indexOfLastSeries = currentPage * quotesPerPage;
 	const indexOfFirstPost = indexOfLastSeries - quotesPerPage;
@@ -28,13 +29,13 @@ export default function Quotes() {
 	useEffect(() => {
 		setLayoutType('psh-main-layout--default');
 		setLoading(true);
-		console.log(seriesName)
 		SeriesService.getQuotesBySeries(seriesName)
 			.then(res => {
 				setQuotes(sortAlphabeticaly(res.data, 'author'));
 			})
 			.catch(error => {
 				console.log(error);
+				setError(error.toString());
 			})
 			.finally(() => {
 				setLoading(false);
@@ -62,6 +63,7 @@ export default function Quotes() {
 				onTotalSeries={quotes.length}
 				onChangePage={(number) => setCurrentPage(number)}
 			/>
+			<p className='text--center text--body4 text--color-valentine-red-800 py-5'>{error}</p>
 		</div>
 	)
 }

@@ -2,7 +2,6 @@ import React from "react";
 
 export function sortAlphabeticaly(data, prop) {
 	let sorted;
-	console.log(data)
 	if (typeof prop === 'string') {
 		sorted = data?.sort(
 			function (a, b) {
@@ -15,7 +14,7 @@ export function sortAlphabeticaly(data, prop) {
 				}
 			});
 	} else {
-		sorted = data.sort();
+		sorted = data?.sort();
 	}
 
 	return sorted;

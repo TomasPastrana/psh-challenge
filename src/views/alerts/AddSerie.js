@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
+// components
 import Modal from 'components/Modal/Modal';
-
-import pshLogo from "../../assets/img/logo_red_psh.svg";
 
 export default function AddSerie(props) {
 
@@ -11,12 +10,18 @@ export default function AddSerie(props) {
 		id: 0,
 		value: '',
 		img: null,
+		userCreated: true,
 	});
+	const [error, setError] = useState('');
 
 	useEffect(() => {
 		if (props) {
 			setModalOne(props.onOpen);
-			setValues(v => ({...v, id: props.onCount}));
+			if (!props.onEdit) {
+				setValues(v => ({...v, id: props.onCount, value: ''}));
+			} else {
+				setValues(props.onEdit);
+			}
 		}
 	}, [props]);
 
@@ -27,19 +32,32 @@ export default function AddSerie(props) {
 
 	function handleChange(e) {
 		const { name, value } = e.target;
+
+		if (name === 'img') {
+			if (value.split('.').at(-1) !== 'jpg') {
+				setError('Image file must end in .jpg extension');
+				return;
+			}
+		}
+
 		setValues(v => ({ ...v, [name]: value.replaceAll(' ', '_') }));
 	}
 
 	function saveSerie() {
 		let storedSeries = JSON.parse(localStorage.getItem('series')) || [];
 		try {
+			if (props.onEdit) {
+				let index = storedSeries.findIndex(e => e.id === values.id);
+				storedSeries.splice(index, 1);
+			}
 			storedSeries.push(values);
 			localStorage.setItem('series', JSON.stringify(storedSeries));
 		} catch (error) {
 			console.log(error);
+			setError(error.toString());
 		} finally {
-			props.onNewSeries(storedSeries);
-			//closeModal();
+			props.onNewSeries(values);
+			closeModal();
 		}
 	}
 
@@ -64,11 +82,13 @@ export default function AddSerie(props) {
 							<p className={'text--color-dark-blue-800 text--title3 mr-1'}>Tilte:</p>
 							<input className="form-control" name="value" type="text" placeholder="Breaking Bad" aria-label="text" value={values.value} onChange={handleChange} />
 						</div>
-						<div className={'d-flex align-items-center mt-4 offset-bottom-2'}>
+						{/* <div className={'d-flex align-items-center mt-4 offset-bottom-2'}>
 							<p className={'text--color-dark-blue-800 text--title3 mr-1'}>Image:</p>
 							<input className="form-control" name="img" type="file" id="formFile" value={values.image} onChange={handleChange} />
+						</div> */}
+						<div className={'d-flex justify-content-center mt-4 offset-bottom-2'}>
+							<p className='text--center text--body4 text--color-valentine-red-800'>{error}</p>
 						</div>
-
 						<div className={'row justify-content-center flex-column-reverse flex-md-row offset-top-3'}>
                             <div className={'col-md-6'}>
                                 <button type={'button'} className={'btn btn--outline full'} onClick={() => closeModal()}>Volver</button>
@@ -89,4 +109,5 @@ AddSerie.propTypes = {
 	onCount: PropTypes.number,
 	onClose: PropTypes.func,
 	onNewSeries: PropTypes.func,
+	onEdit: PropTypes.object,
 };
