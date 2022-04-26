@@ -1,0 +1,134 @@
+
+@import '_colors.scss';
+
+/*------------------------------------------------------------------------------Prefix (PSH Niveles) */
+
+$prefix: "psh";
+
+/*------------------------------------------------------------------------------Font base */
+
+$font-size-base: 16px;
+$font-family-base: "Arial", sans-serif;
+
+/*------------------------------------------------------------------------------Line height base */
+
+$line-height-base: 140%;
+
+/*------------------------------------------------------------------------------Font weight */
+
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 900;
+
+/*------------------------------------------------------------------------------Mixins */
+
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-o-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+}
+
+@mixin box-shadow($top, $left, $blur, $color) {
+	-webkit-box-shadow: $top $left $blur $color;
+	-moz-box-shadow: $top $left $blur $color;
+	box-shadow: $top $left $blur $color;
+}
+
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin offset-margin($margin, $value) {
+	margin-#{$margin}: $value;
+}
+
+@mixin offsety-margin($margin, $value) {
+	margin-#{$margin}: -$value;
+}
+
+@mixin gradient-radial($inner-color, $outer-color) {
+	background-image: -webkit-radial-gradient(circle, $inner-color, $outer-color);
+	background-image: radial-gradient(circle, $inner-color, $outer-color);
+	background-repeat: no-repeat;
+}
+
+/*------------------------------------------------------------------------------Global margins */
+
+@for $i from 1 through 12 {
+	@each $margin in top, left, bottom, right {
+		.offset-#{$margin}-#{$i} {
+			@include offset-margin($margin, 10px * $i);
+		}
+	}
+}
+
+
+
+/*------------------------------------------------------------------------------Global paddings */
+
+@for $i from 1 through 12 {
+	@each $margin in top, left, bottom, right {
+		.padding-#{$margin}-#{$i} {
+			@include offset-margin($margin, 12px * $i);
+		}
+	}
+}
+
+
+@mixin input-placeholder {
+	&.placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+	&::-webkit-input-placeholder {
+		@content;
+	}
+}
+
+/*------------------------------------------------------------------------------Font size */
+
+$font-size-h1: 96px;
+$font-size-h2: 64px;
+$font-size-h3: 56px;
+$font-size-h4: 48px;
+$font-size-h5: 36px;
+$font-size-h6: 28px;
+
+$font-size-t1: 24px;
+$font-size-t2: 20px;
+$font-size-t3: 18px;
+$font-size-t4: 16px;
+
+$font-size-body1: 18px;
+$font-size-body2: 16px;
+$font-size-body3: 14px;
+$font-size-body4: 12px;
+
+/*------------------------------------------------------------------------------Breakpoints */
+
+$screen-xxs-min: 375px;
+$screen-xs-min: 560px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-tablet-min: 1024px;
+$screen-l-min: 1199px;
+$screen-lg-min: 1200px;
+$screen-xl-min: 1280px;
+
+/*------------------------------------------------------------------------------Margins */
+
+$margen: 10px;

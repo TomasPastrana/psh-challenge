@@ -1,0 +1,213 @@
+.#{$prefix} {
+    &-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-color: rgba(8, 31, 65, 0.9);
+
+            transition: all 100ms ease;
+        }
+
+        &__box {
+            background: white;
+            display: inline-flex;
+            position: absolute;
+            border-radius: 12px;
+            z-index: 1;
+            max-width: 570px;
+            width: 100%;
+            min-height: 100px;
+
+            transform: translate(-50%, -50%);
+            top: 0;
+            left: 50%;
+
+            opacity: 0;
+            transition: all 600ms ease;
+        }
+        &__cont {
+            padding: 16px;
+        }
+        &.active {
+            &:before {
+                opacity: 1;
+                transition: all 300ms ease;
+            }
+
+            .#{$prefix} {
+                &-modal {
+                    &__box {
+                        top: 50%;
+                        opacity: 1;
+                        transition: all 800ms ease;
+                    }
+                }
+            }
+        }
+
+        &__button-close-outer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-color: transparent;
+            border: none;
+        }
+
+        //Modal custom styles
+
+        &__cont {
+            padding: 28px 0 32px 0;
+            @media only screen and (max-width: $screen-md-min - 1) {
+                padding: 28px 16px 22px 16px;
+            }
+        }
+
+        @media only screen and (max-width: $screen-md-min - 1) {
+            &:before {
+                background-color: transparent;
+                transition: all 300ms ease;
+                transition-delay: 300ms;
+            }
+        }
+        &.active {
+            @media only screen and (max-width: $screen-md-min - 1) {
+                &:before {
+                    background-color: white;
+                    transition: all 300ms ease;
+                }
+            }
+            .#{$prefix} {
+                &-modal {
+                    &__box {
+                        @media only screen and (max-width: 991px) {
+                            top: 0;
+                            left: 50%;
+                            transform: translate(-50%, 0);
+                            transition: all 800ms ease;
+                        }
+                    }
+                }
+            }
+
+            .#{$prefix} {
+                &-modal {
+                    &__close-button {
+                        > span{
+                            width: 40px;
+                            height: 40px;
+                            opacity: 1;
+                            transition: all 500ms ease;
+                            transition-delay: 500ms;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &__button-close-outer {
+            @media only screen and (max-width: $screen-md-min - 1) {
+                pointer-events: none;
+            }
+        }
+
+        &__close-button {
+            position: absolute;
+            top: -40px;
+            right: -60px;
+            border-radius: 100%;
+            display: inline-flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            color: $color-white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            background: none;
+            font-size: 14px;
+            cursor: pointer;
+
+            &:hover{
+                > span{
+                    &:before{
+                        opacity: 1;
+                        transition: all 300ms ease;
+                    }
+                }
+            }
+
+            > span{
+                border-radius: 100%;
+                position: absolute;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 0;
+                height: 0;
+                opacity: 0;
+
+                transition: all 100ms ease;
+                transition-delay: 0ms;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    width: 100%;
+                    height: 100%;
+                    background: $color-dark-blue-1000;
+                    opacity: 0.3;
+                    transition: all 300ms ease;
+                    @media only screen and (max-width: $screen-md-min - 1) {
+                        display: none;
+                    }
+                }
+            }
+
+            @media only screen and (max-width: $screen-md-min - 1) {
+                color: $color-base;
+                top: 18px;
+                right: 40px;
+                z-index: 1;
+            }
+
+            @media only screen and (max-width: $screen-sm-min - 1) {
+                right: 20px;
+            }
+        }
+
+        &--md{
+            .#{$prefix} {
+                &-modal {
+                    &__cont {
+                        width: 100%;
+                        max-width: 656px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+

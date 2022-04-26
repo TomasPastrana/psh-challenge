@@ -1,0 +1,203 @@
+.#{$prefix} {
+    &-circle {
+        width: 56px;
+        height: 56px;
+        overflow: hidden;
+        background: $color-secondary;
+        color: $color-white;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i{
+            font-size: 20px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        &--img-float{
+            img{
+                max-width: 65%;
+            }
+        }
+
+        &--color-white {
+            background-color: $color-white;
+        }
+
+        &--color-transparent {
+            background-color: transparent;
+        }
+
+        &--color-error{
+            background-color: $color-error;
+        }
+
+        &--color-success{
+            background-color: $color-green-aqua-1000;
+        }
+
+        &--color-disabled{
+            background-color: $color-dark-blue-200;
+        }
+
+        &--color-vivid-orange-800{
+            background-color: $color-vivid-orange-800;
+        }
+
+        &--color-light-blue-200{
+            background-color: $color-light-blue-200;
+        }
+
+        &--color-light-blue-600{
+            background-color: $color-light-blue-600;
+        }
+
+        &--type-success{
+            outline: solid 6px $color-aqua-border;
+            position: relative;
+            background-color: $color-green-aqua-1000;
+        }
+
+        &--type-rejected{
+            outline: solid 6px $color-rejected-border;
+            position: relative;
+            background-color: $color-rejected;
+        }
+
+        &--type-pending{
+            outline: solid 6px $color-pending-border;
+            position: relative;
+            background-color: $color-bright-orange-800;
+        }
+
+        &--2 {
+            width: 16px;
+            height: 16px;
+
+            i {
+                font-size: 12px;
+            }
+        }
+
+        &--3 {
+            width: 24px;
+            height: 24px;
+            i {
+                font-size: 12px;
+            }
+        }
+
+        &--4 {
+            width: 32px;
+            height: 32px;
+            i {
+                font-size: 12px;
+            }
+        }
+
+        &--5 {
+            width: 40px;
+            height: 40px;
+            i {
+                font-size: 14px;
+            }
+        }
+
+        &--6 {
+            width: 48px;
+            height: 48px;
+            i {
+                font-size: 14px;
+            }
+        }
+
+        &--7 {
+            width:  56px;
+            height: 56px;
+            i {
+                font-size: 22px;
+            }
+        }
+
+        &--8 {
+            width:  64px;
+            height: 64px;
+            i {
+                font-size: 16px;
+                &.h6{
+                    font-size: 30px;
+                }
+            }
+        }
+
+        &--9 {
+            width:  80px;
+            height: 80px;
+            i {
+                font-size: 20px;
+            }
+        }
+
+        &--10 {
+            width:  96px;
+            height: 96px;
+            i {
+                font-size: 24px;
+            }
+        }
+
+        &--11 {
+            width:  116px;
+            height: 116px;
+            i {
+                font-size: 24px;
+            }
+        }
+
+        &--12 {
+            width:  124px;
+            height: 124px;
+            i {
+                font-size: 24px;
+            }
+
+            @media only screen and (max-width: $screen-md-min - 1) {
+                width: 80px;
+                height: 80px;
+                i{
+                    font-size: 20px;
+                }
+            }
+
+        }
+
+        &--mobile-header {
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+            background-color: $color-light-blue-800;
+            i {
+                font-size: 16px;
+            }
+
+            .icon{
+                &--history, &--cube, &--logout {
+                    font-size: 18px;
+                }
+            }
+
+            &.md {
+                &--only {
+                    display: none;
+                    @media only screen and (max-width: $screen-md-min - 1) {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+}
